@@ -1,0 +1,40 @@
+{{ if eq .Site.Params.openGraph true }}
+{{ template "_internal/opengraph.html" . }}
+{{ end }}
+<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Aerojini Solutions LLP — Software Engineering and Cloud Consulting{{ end }}" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+{{- with .Site.Params.company }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .legal_name }}",
+  "url": "{{ $.Site.BaseURL }}",
+  "email": "{{ .email }}",
+  "taxID": "{{ .gstin }}",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "LLPIN",
+    "value": "{{ .llpin }}"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 2B, Sivagami Nagar, Medavakkam",
+    "addressLocality": "Chennai",
+    "postalCode": "600100",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://github.com/aerojini",
+    "https://www.linkedin.com/company/aerojini-solutions/",
+    "https://www.facebook.com/Aerojini-Solutions-LLP-111089357053775/",
+    "https://twitter.com/aerojini"
+  ]
+}
+</script>
+{{- end }}
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0fbefda3-af36-4328-8e0b-11d5a0e63619";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+{{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}

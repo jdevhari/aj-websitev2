@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale }}">
+  <head>
+    {{ partial "meta.html" . }}
+    <title>Engineering Blog | {{ .Site.Title }}</title>
+    {{ partial "css.html" . }}
+  </head>
+  <body>
+{{ if .Site.Params.gtm_id }}<noscript><iframe src="//www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{{ end }}
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
+
+    {{ partial "navbar.html" . }}
+    {{ partial "navbar-clone.html" . }}
+
+    <section class="section is-medium">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-centered-tablet-portrait">
+            <h1 class="title section-title">Engineering Blog</h1>
+            <h5 class="subtitle is-5 is-muted">Technical articles on Generative AI, cloud architecture, and production software engineering</h5>
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="blog-list">
+          {{- $articles := where .Pages "Params.article" true }}
+          {{- range $articles.ByDate.Reverse }}
+          <article class="blog-card">
+            <div class="blog-card-meta">
+              <span>{{ .Date.Format "January 2, 2006" }}</span>
+              {{- with .Params.topic }}
+              <span>&middot;</span>
+              <span class="blog-topic">{{ . }}</span>
+              {{- end }}
+              <span>&middot;</span>
+              <span>{{ .ReadingTime }} min read</span>
+            </div>
+            <h2 class="title is-4 blog-card-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{- with .Params.summary }}
+            <p class="blog-card-summary">{{ . }}</p>
+            {{- end }}
+            <a class="blog-read-more" href="{{ .RelPermalink }}">Read article &rarr;</a>
+          </article>
+          {{- end }}
+        </div>
+      </div>
+    </section>
+
+    {{ if .Site.Params.footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{ partial "javascript.html" . }}
+  </body>
+</html>

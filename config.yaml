@@ -1,0 +1,173 @@
+baseURL: https://www.aerojini.com
+locale: en-us
+title: Aerojini Solutions LLP
+theme: hugo-fresh
+# Disables warnings
+disableKinds:
+- taxonomy
+- term
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+params:
+  gtm_id: GTM-T5WRD7W
+
+  # Open graph allows easy social sharing.
+  openGraph: true
+  # Meta description for search engines
+  description: Aerojini Solutions LLP (LLPIN AAR-3910, GSTIN 33ABQFA8046B2ZK) is a registered Indian software engineering and cloud consulting firm specializing in application modernization, cloud architecture, and custom SaaS platforms.
+  navbarlogo:
+    # Logo (from static/images/___)
+    image: logos/aerojini.svg
+    link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600,700]
+  company:
+    legal_name: Aerojini Solutions LLP
+    llpin: AAR-3910
+    gstin: 33ABQFA8046B2ZK
+    registered_address: Plot No. 2B, Sivagami Nagar, Medavakkam, Chennai 600100, Tamil Nadu, India
+    jurisdiction: Tamil Nadu, India
+    email: contact@aerojini.com
+  hero:
+    # Main hero title
+    title: Software Engineering & Cloud Consulting
+    # Hero subtitle
+    subtitle: Aerojini Solutions LLP designs and builds reliable cloud systems, modernized enterprise applications, and custom SaaS software.
+    # Button text
+    buttontext: Talk to Our Team
+    # Where the main hero button links to
+    buttonlink: "#contactsec"
+    # Hero image (from static/images/___)
+    image: illustrations/worker.svg
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Home
+    url: /
+  - title: Services
+    url: /#services
+  - title: Products/Solutions
+    sublinks:
+    - title: FlowGrid BPM
+      url: /blog/flowgrid-bpm
+    - title: CampusLedger
+      url: /blog/campusledger
+    - title: PayBridge Connect
+      url: /blog/paybridge-connect
+    - title: CartPulse AI
+      url: /blog/cartpulse-ai
+    - title: LexBrief Workspace
+      url: /blog/lexbrief-workspace
+    - title: Memberjini
+      url: /blog/memberjini
+    - title: Tradejini
+      url: /blog/tradejini
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /blog/about
+  - title: Careers
+    url: /blog/careers
+  - title: Contact Us
+    url: /blog/contact
+    button: true
+  section1:
+    title: Engineering Services
+    subtitle: Practical software delivery from architecture to production
+    tiles:
+    - title: Application Modernization
+      icon: mouse-globe
+      text: Re-architecting legacy systems into maintainable, secure, cloud-ready web and mobile applications.
+      url: /#contactsec
+      buttonText: Discuss a Project
+    - title: Cloud Consulting
+      icon: laptop-cloud
+      text: Cloud architecture, migration, and operational reliability across AWS, Microsoft Azure, and IBM Cloud.
+      url: /#contactsec
+      buttonText: Explore Cloud Support
+    - title: Custom Software & AI
+      icon: plug-cloud
+      text: End-to-end engineering for web platforms, mobile apps, APIs, IoT workflows, and applied AI solutions.
+      url: /#contactsec
+      buttonText: Contact Engineering
+  section2:
+    title: How We Deliver
+    subtitle: Engineering discipline backed by direct accountability
+    features:
+    - title: Direct Senior Engineering
+      text: Clients work directly with senior engineers from initial architecture through deployment without layers of account handoffs.
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: Maintainable, Transparent Systems
+      text: We prioritize clean architecture, automated builds, clear documentation, and observable infrastructure your team can confidently own.
+      icon: doc-sync
+    - title: Registered & Accountable Partner
+      text: Aerojini Solutions LLP (LLPIN AAR-3910 · GSTIN 33ABQFA8046B2ZK) is a registered Indian partnership based in Tamil Nadu, building practical software aligned with real business and compliance needs.
+      icon: mobile-feed
+  section5: true
+  footer:
+    # Logo (from /images/logos/___)
+    logo: aerojini-white.svg
+    # Social Media Title
+    socialmediatitle: Follow Us
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://www.linkedin.com/company/aerojini-solutions/
+      icon: linkedin
+      label: LinkedIn
+    - link: https://github.com/aerojini
+      # Icons are from Font Awesome
+      icon: github
+      label: GitHub
+    - link: https://twitter.com/aerojini
+      icon: twitter
+      label: X (Twitter)
+    - link: https://www.facebook.com/Aerojini-Solutions-LLP-111089357053775/
+      icon: facebook
+      label: Facebook
+    bulmalogo: false
+    quicklinks:
+      column1:
+        title: "Services"
+        links:
+        - text: Application Modernization
+          link: /#services
+        - text: Cloud Consulting
+          link: /#services
+        - text: Custom Software & AI
+          link: /#services
+      column2:
+        title: "Products/Solutions"
+        links:
+        - text: FlowGrid BPM
+          link: /blog/flowgrid-bpm
+        - text: CampusLedger
+          link: /blog/campusledger
+        - text: PayBridge Connect
+          link: /blog/paybridge-connect
+        - text: CartPulse AI
+          link: /blog/cartpulse-ai
+        - text: LexBrief Workspace
+          link: /blog/lexbrief-workspace
+        - text: Memberjini
+          link: /blog/memberjini
+        - text: Tradejini
+          link: /blog/tradejini
+      column3:
+        title: "Company"
+        links:
+        - text: About Us
+          link: /blog/about
+        - text: Blog
+          link: /blog/
+        - text: Careers
+          link: /blog/careers
+        - text: Contact Us
+          link: /blog/contact
+        - text: Terms and Conditions
+          link: /blog/tnc
+        - text: Privacy Policy
+          link: /blog/privacy

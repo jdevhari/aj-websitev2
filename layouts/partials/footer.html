@@ -1,0 +1,73 @@
+{{- $footer           := .Site.Params.footer }}
+{{- $logo             := index $footer "logo" }}
+{{- $quickLinks       := index $footer "quicklinks" }}
+{{- $socialMedia      := index $footer "socialmedia" }}
+{{- $bulmaLogo        := index $footer "bulmalogo" }}
+{{- $socialMediaTitle := index $footer "socialmediatitle" }}
+{{- $company          := .Site.Params.company }}
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-4">
+        <div class="footer-logo" style="margin-bottom: 1rem;">
+          <img src="{{ printf "/images/logos/%s" $logo | relURL }}" alt="{{ .Site.Title }}">
+        </div>
+        {{- with $company }}
+        <p style="color: #98a9c3; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
+          <strong style="color: #fff;">{{ .legal_name }}</strong><br>
+          LLPIN: {{ .llpin }} &nbsp;|&nbsp; GSTIN: {{ .gstin }}<br>
+          Registered Address: {{ .registered_address }}
+        </p>
+        <p style="color: #98a9c3; font-size: 0.9rem; line-height: 1.6;">
+          Email: <a href="mailto:{{ .email }}" style="color: #fcfcfc;">{{ .email }}</a>
+        </p>
+        {{- end }}
+      </div>
+      {{- range $quickLinks }}
+        <div class="column">
+          <div class="footer-column">
+            <div class="footer-header">
+              <h3>{{ .title }}</h3>
+            </div>
+            <ul class="link-list">
+              {{- range .links }}
+              <li>
+                <a href="{{ .link }}">
+                  {{ .text }}
+                </a>
+              </li>
+              {{- end }}
+            </ul>
+          </div>
+        </div>
+      {{- end }}
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>{{ $socialMediaTitle }}</h3>
+          </div>
+          <ul class="link-list">
+            {{- range $socialMedia }}
+            <li>
+              <a href="{{ .link }}" target="_blank" rel="me noopener noreferrer">
+                <span class="icon" style="margin-right: 0.35rem; color: #F39200;"><i class="fa fa-{{ .icon }}"></i></span>
+                <span>{{ .label | default (title .icon) }}</span>
+              </a>
+            </li>
+            {{- end }}
+          </ul>
+          {{- if $bulmaLogo }}
+          <a href="https://bulma.io" target="_blank" rel="noopener noreferrer">
+            <img src="{{ "/images/logos/made-with-bulma.png" | relURL }}" alt="Made with Bulma" width="128" height="24">
+          </a>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+    {{- with $company }}
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); margin-top: 2rem; padding-top: 1.25rem; color: #98a9c3; font-size: 0.85rem;">
+      &copy; {{ now.Year }} {{ .legal_name }}. All rights reserved.
+    </div>
+    {{- end }}
+  </div>
+</footer>

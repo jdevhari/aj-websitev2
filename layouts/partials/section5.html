@@ -1,0 +1,50 @@
+<section id="contactsec" name="contactsec" class="section section-light-grey is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2 is-spaced">Get in Touch</h2>
+      <h3 class="subtitle is-5 is-muted">Tell us about your project or technical requirements</h3>
+      <div class="divider is-centered"></div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <form data-netlify="true" method="POST" name="contact">
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <input class="input is-medium" name="name" type="text" autocomplete="name" placeholder="Your full name" aria-label="Your full name" required>
+              </div>
+              <div class="column is-6">
+                <input class="input is-medium" name="email" type="email" autocomplete="email" placeholder="Work email address" aria-label="Work email address" required>
+              </div>
+              <div class="column is-12">
+                <textarea name="message" class="textarea" rows="8" placeholder="Tell us briefly about your project, timeline, or inquiry..." aria-label="Message" required></textarea>
+              </div>
+              <div class="column is-12 has-text-centered mt-10">
+                <button type="submit" class="button cta is-large primary-btn raised is-clear">Send Message</button>
+              </div>
+            </div>
+          </form>
+          {{- with .Site.Params.company }}
+          <div class="contact-meta has-text-centered">
+            <div class="contact-line is-size-6">
+              <span class="contact-item">Direct email: <a href="mailto:{{ .email }}">{{ .email }}</a></span>
+            </div>
+            {{- with $.Site.Params.footer.socialmedia }}
+            <div class="social-row is-size-6">
+              {{- range . }}
+              <a class="contact-item" href="{{ .link }}" target="_blank" rel="me noopener noreferrer"><i class="fa fa-{{ .icon }}" aria-hidden="true"></i> {{ .label | default (title .icon) }}</a>
+              {{- end }}
+            </div>
+            {{- end }}
+            <p class="legal-line">
+              {{ .legal_name }} &middot; LLPIN: {{ .llpin }} &middot; GSTIN: {{ .gstin }}<br>
+              Registered Address: {{ .registered_address }}
+            </p>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

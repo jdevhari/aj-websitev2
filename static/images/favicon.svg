@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="aerojini-fav-grad" gradientUnits="userSpaceOnUse" x1="108.178" y1="130" x2="216.822" y2="130">
+      <stop offset="0%" stop-color="#ED1C24"/>
+      <stop offset="100%" stop-color="#662D91"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10.5, 4) scale(0.394, -0.394) translate(-108.178, -201)">
+    <path fill="url(#aerojini-fav-grad)" d="m 108.178 76.493 l 50.764 93.466 c 0 0 40.559 -41.959 40.559 -86.949 v 0 c -5.831 9.261 -22.638 31.384 -39.96 31.384 v 0 c -12.004 0 -28.468 -19.123 -31.298 -33.185 v 0 c 6.26 10.032 17.493 24.267 30.612 24.267 v 0 C 176.262 105.476 190.068 59 202.416 59 v 0 c 9.26 0 14.407 14.406 14.407 24.695 v 0 C 216.823 148.179 153.967 201 153.967 201 v 0 z"/>
+  </g>
+</svg>
